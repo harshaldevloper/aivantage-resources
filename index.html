@@ -3,323 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Resources | AIVANTAGE - 500+ AI Prompts & Tools</title>
-    <meta name="description" content="Free AI prompts, tools directory, and resources for creators and developers.">
+    <title>AIVANTAGE Resources - 500+ AI Prompts & Tools</title>
+    <meta name="description" content="Free AI prompts, tools directory, and templates for creators.">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary: #f97316; --secondary: #fb923c; --accent: #fbbf24;
+            --glass: rgba(255, 255, 255, 0.1); --glass-border: rgba(255, 255, 255, 0.2);
         }
-        
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #fff;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            min-height: 100vh; color: #fff; overflow-x: hidden;
         }
-        
-        /* Animated Background */
         .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;
         }
-        
         .bg-animation::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
+            content: ''; position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
             background: radial-gradient(circle, var(--glass) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+        @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        /* Header with Logo & Founder */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
-            animation: fadeInDown 0.8s ease;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 2rem 0; animation: fadeInDown 0.8s ease;
         }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
         
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
+        .logo-section { display: flex; align-items: center; gap: 1rem; }
         .logo {
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--primary);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; font-weight: bold; color: var(--primary);
         }
-        
-        .site-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-        }
+        .site-name { font-size: 1.8rem; font-weight: bold; }
         
         .founder-badge {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
+            background: var(--glass); backdrop-filter: blur(10px);
             border: 1px solid var(--glass-border);
-            padding: 1rem 1.5rem;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            animation: fadeInUp 0.8s ease;
+            padding: 1rem 1.5rem; border-radius: 50px;
+            display: flex; align-items: center; gap: 1rem;
         }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
         .founder-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+            width: 50px; height: 50px; border-radius: 50%;
             background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: bold; color: var(--primary);
         }
+        .founder-info { text-align: left; }
+        .founder-name { font-weight: bold; font-size: 1rem; }
+        .founder-role { font-size: 0.85rem; opacity: 0.8; }
         
-        .founder-info {
-            text-align: left;
-        }
-        
-        .founder-name {
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        
-        .founder-role {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 4rem 0;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-        
+        .hero { text-align: center; padding: 3rem 0; animation: fadeInUp 0.8s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3rem; margin-bottom: 1rem;
             background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
+        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
         
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .stats {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem; margin: 3rem 0; padding: 2rem;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border-radius: 20px; border: 1px solid var(--glass-border);
         }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 3rem; font-weight: bold; display: block; margin-bottom: 0.5rem; }
+        .stat-label { opacity: 0.8; font-size: 0.9rem; }
         
-        /* Resources Grid */
         .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; margin: 3rem 0;
         }
-        
         .resource-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
+            background: var(--glass); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            padding: 2rem; transition: all 0.3s ease;
             animation: fadeInUp 0.8s ease backwards;
         }
-        
         .resource-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 25px 80px rgba(0,0,0,0.4);
             border-color: rgba(255,255,255,0.4);
         }
-        
         .resource-card:nth-child(1) { animation-delay: 0.1s; }
         .resource-card:nth-child(2) { animation-delay: 0.2s; }
         .resource-card:nth-child(3) { animation-delay: 0.3s; }
         .resource-card:nth-child(4) { animation-delay: 0.4s; }
         
-        .resource-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .resource-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .resource-card p {
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
+        .resource-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .resource-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .resource-card p { opacity: 0.9; line-height: 1.6; margin-bottom: 1.5rem; }
         
         .resource-btn {
             display: inline-block;
             background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
             color: var(--primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+            padding: 0.75rem 1.5rem; border-radius: 50px;
+            text-decoration: none; font-weight: 600;
             transition: all 0.3s ease;
         }
-        
         .resource-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(255,255,255,0.3);
         }
         
-        /* Stats Section */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            padding: 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-        }
-        
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 3rem 0;
-            opacity: 0.9;
-            margin-top: 3rem;
-        }
-        
-        footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            opacity: 0.8;
-        }
-        
-        footer a:hover {
-            opacity: 1;
-        }
+        footer { text-align: center; padding: 3rem 0; opacity: 0.9; margin-top: 3rem; }
+        footer a { color: #fff; text-decoration: none; margin: 0 0.5rem; opacity: 0.8; }
+        footer a:hover { opacity: 1; }
         
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
-            }
-            
-            .founder-badge {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .logo-section {
-                justify-content: center;
-            }
+            header { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .founder-badge { width: 100%; justify-content: center; }
+            .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
-    
     <div class="container">
         <header>
             <div class="logo-section">
                 <div class="logo">A</div>
-                <div class="site-title">AIVANTAGE Resources</div>
+                <div class="site-name">AIVANTAGE Resources</div>
             </div>
-            
             <div class="founder-badge">
                 <div class="founder-avatar">H</div>
                 <div class="founder-info">
@@ -393,9 +207,7 @@
                 <a href="https://x.com/aivantage_ai" target="_blank">Twitter</a> •
                 <a href="https://dev.to/aiavantage" target="_blank">Dev.to</a>
             </div>
-            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
-                © 2026 AIVANTAGE. All rights reserved.
-            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">© 2026 AIVANTAGE. All rights reserved.</p>
         </footer>
     </div>
 </body>
